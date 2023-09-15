@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+
+  <!-- Device Repo -->
+  <project path="device/lineage/sepolicy" name="lineage_device_lineage_sepolicy" remote="linevall" />
+
+  <!-- External repos -->
+  <project path="external/faceunlock" name="lineage_external_faceunlock" remote="linevall" />
+
+  <!-- Framework repos -->
+  <project path="frameworks/av" name="lineage_frameworks_av" remote="linevall" />
+  <project path="frameworks/base" name="lineage_frameworks_base" remote="linevall" />
+  <project path="frameworks/native" name="lineage_frameworks_native" remote="linevall" />
+
+  <!-- General repos -->
+  <project path="art" name="lineage_art" remote="linevall" />
+  <project path="lineage-sdk" name="lineage_lineage-sdk" remote="linevall" />
+  <project path="bionic" name="lineage_bionic" remote="linevall" />
+  <project path="build/make" name="lineage_build_make" remote="linevall" >
+    <copyfile src="core/root.mk" dest="Makefile" />
+    <linkfile src="CleanSpec.mk" dest="build/CleanSpec.mk" />
+    <linkfile src="buildspec.mk.default" dest="build/buildspec.mk.default" />
+    <linkfile src="core" dest="build/core" />
+    <linkfile src="envsetup.sh" dest="build/envsetup.sh" />
+    <linkfile src="target" dest="build/target" />
+    <linkfile src="tools" dest="build/tools" />
+  </project>
+  <project path="build/soong" name="lineage_build_soong" remote="linevall" >
+    <linkfile src="root.bp" dest="Android.bp" />
+    <linkfile src="bootstrap.bash" dest="bootstrap.bash" />
+  </project>
+  <project path="manifest" name="lineage_manifest" remote="linevall" />
+
+  <!-- Hardware repos -->
+  <project path="hardware/xiaomi" name="lineage_hardware_xiaomi" remote="linevall" />
+  <project path="hardware/interfaces" name="lineage_hardware_interfaces" remote="linevall" />
+
+  <!-- Packages repos -->
+  <project path="packages/apps/Settings" name="lineage_packages_apps_Settings" remote="linevall" />
+  <project path="packages/apps/Trebuchet" name="lineage_packages_apps_Trebuchet" remote="linevall" />
+  <project path="packages/apps/LineVall" name="lineage_packages_apps_LineVall" remote="linevall" />
+  <project path="packages/apps/FaceUnlockService" name="lineage_packages_apps_FaceUnlockService" remote="linevall" />
+  <project path="packages/apps/GameSpace" name="lineage_packages_apps_GameSpace" remote="linevall" />
+  <project path="packages/apps/LineageParts" name="lineage_packages_apps_LineageParts" remote="linevall" />
+
+  <!-- System repos -->
+  <project path="system/core" name="lineage_system_core" remote="linevall" />
+  <project path="system/extras" name="lineage_system_extras" remote="linevall" />
+  <project path="system/sepolicy" name="lineage_system_sepolicy" remote="linevall" />
+
+  <project path="system/update_engine" name="lineage_system_update_engine" remote="linevall" />
+
+  <!-- vendor repos -->
+  <project path="vendor/lineage" name="lineage_vendor_lineage" remote="linevall" />
+
+  <!-- Add Ons -->
+  <project path="prebuilts/clang/host/linux-x86/clang-banana" name="clang" remote="gitlab" clone-depth="1" revision="ban17" />
+
+</manifest>

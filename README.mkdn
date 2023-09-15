@@ -8,7 +8,7 @@ To get started with Android/LineageOS, you'll need to get familiar with [Source 
 
 To initialize your local repository using the LineageOS trees, use a command like this:
 ```
-repo init -u https://github.com/LineageOS/android.git -b lineage-20.0 --git-lfs
+repo init -u https://github.com/LineVall/lineage_manifest.git -b los-20 --git-lfs
 ```
 Then to sync up:
 ```
@@ -34,3 +34,13 @@ All supported devices are built weekly and periodically as changes are committed
 You can view the current build statuses at [LineageOS Buildkite](https://buildkite.com/lineageos).
 
 Builds produced weekly by the buildbot can be downloaded from [LineageOS downloads](https://download.lineageos.org/).
+
+
+Big Thanks
+
+BananaDroid
+Spark Os
+CrDroid
+Superior Os
+Afterlife Project
+Atiga Project

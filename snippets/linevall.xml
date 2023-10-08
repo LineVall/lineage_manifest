@@ -55,6 +55,7 @@
 
   <!-- Add Ons -->
   <project path="prebuilts/clang/host/linux-x86/clang-banana" name="clang" remote="gitlab" clone-depth="1" revision="ban17" />
+  <project path="packages/apps/ViPER4AndroidFX" name="dolby" remote="gitlab" revision="viper" />
 
   <!-- Device Tree -->
   <project path="device/xiaomi/sweet" name="device_xiaomi_sweet" remote="linevall" revision="lineage-20" />

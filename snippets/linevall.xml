@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+
+  <remote name="github"
+    fetch="https://github.com/" />
+
+  <remote name="linevall"
+          fetch="https://github.com/LineVall"
+          revision="refs/heads/14"/>
+
+   <remote name="gitlab"
+            fetch="https://gitlab.com/LineVall"
+            revision="refs/heads/14"/>
+            
+  <!-- Build -->
+  <project path="build/make" name="linevall_build_make" remote="linevall">
+    <copyfile src="core/root.mk" dest="Makefile" />
+    <linkfile src="CleanSpec.mk" dest="build/CleanSpec.mk" />
+    <linkfile src="buildspec.mk.default" dest="build/buildspec.mk.default" />
+    <linkfile src="core" dest="build/core" />
+    <linkfile src="envsetup.sh" dest="build/envsetup.sh" />
+    <linkfile src="target" dest="build/target" />
+    <linkfile src="tools" dest="build/tools" />
+  </project>
+  <project path="build/soong" name="linevall_build_soong" remote="linevall" >
+    <linkfile src="root.bp" dest="Android.bp" />
+    <linkfile src="bootstrap.bash" dest="bootstrap.bash" />
+  </project>
+
+  <project path="art" name="linevall_art" remote="linevall" />
+  <project path="bionic" name="linevall_bionic" remote="linevall" />
+  <project path="bootable/recovery" name="linevall_bootable_recovery" remote="linevall" />
+  <project path="libcore" name="linevall_libcore" remote="linevall" />
+
+  <!-- Device -->
+  <project path="device/qcom/sepolicy-legacy-um" name="linevall_device_qcom_sepolicy-legacy-um" remote="linevall" />
+  <project path="device/linevall/sepolicy" name="linevall_device_linevall_sepolicy" remote="linevall" />
+
+  <!-- External -->
+  <project path="external/cronet" name="linevall_external_cronet" remote="linevall" />
+  <project path="external/gptfdisk" name="linevall_external_gptfdisk" remote="linevall" />
+  <project path="external/mksh" name="linevall_external_mksh" remote="linevall" />
+  <project path="external/tinycompress" name="linevall_external_tinycompress" remote="linevall" />
+  <project path="external/tinyxml" name="linevall_external_tinyxml" remote="linevall" />
+  <project path="external/wpa_supplicant_8" name="linevall_external_wpa_supplicant_8" remote="linevall" />
+  
+  <!-- Framework -->
+  <project path="frameworks/av" name="linevall_frameworks_av" remote="linevall" />
+  <project path="frameworks/base" name="linevall_frameworks_base" remote="linevall" />
+  <project path="frameworks/libs/net" name="linevall_frameworks_libs_net" remote="linevall" />
+  <project path="frameworks/libs/systemui" name="linevall_frameworks_libs_systemui" remote="linevall" />
+  <project path="frameworks/native" name="linevall_frameworks_native" remote="linevall" />
+  <project path="frameworks/opt/telephony" name="linevall_frameworks_opt_telephony" groups="pdk-cw-fs,pdk-fs" remote="linevall" />
+
+  <!-- Hardware -->
+  <project path="hardware/interfaces" name="linevall_hardware_interfaces" remote="linevall" />
+  <project path="hardware/libhardware" name="linevall_hardware_libhardware" remote="linevall" />
+  <project path="hardware/linevall/interfaces" name="linevall_hardware_linevall_interfaces" remote="linevall" />
+  <project path="hardware/qcom-caf/common" name="linevall_hardware_qcom-caf_common" remote="linevall" >
+    <!-- add guard for AOSP hardware/qcom dir -->
+    <linkfile src="os_pickup_aosp.mk" dest="hardware/qcom/Android.mk" />
+    <!-- add guards for CAF repositories -->
+    <linkfile src="os_pickup_sepolicy_vndr.mk" dest="device/qcom/sepolicy_vndr/SEPolicy.mk" />
+    <linkfile src="os_pickup.bp" dest="hardware/qcom-caf/msm8996/Android.bp" />
+    <linkfile src="os_pickup.mk" dest="hardware/qcom-caf/msm8996/Android.mk" />
+    <linkfile src="os_pickup.bp" dest="hardware/qcom-caf/msm8998/Android.bp" />
+    <linkfile src="os_pickup.mk" dest="hardware/qcom-caf/msm8998/Android.mk" />
+    <linkfile src="os_pickup_qssi.bp" dest="hardware/qcom-caf/sdm660/Android.bp" />
+    <linkfile src="os_pickup.mk" dest="hardware/qcom-caf/sdm660/Android.mk" />
+    <linkfile src="os_pickup_qssi.bp" dest="hardware/qcom-caf/sdm845/Android.bp" />
+    <linkfile src="os_pickup.mk" dest="hardware/qcom-caf/sdm845/Android.mk" />
+    <linkfile src="os_pickup_qssi.bp" dest="hardware/qcom-caf/sm8150/Android.bp" />
+    <linkfile src="os_pickup.mk" dest="hardware/qcom-caf/sm8150/Android.mk" />
+    <linkfile src="os_pickup_qssi.bp" dest="hardware/qcom-caf/sm8250/Android.bp" />
+    <linkfile src="os_pickup.mk" dest="hardware/qcom-caf/sm8250/Android.mk" />
+    <linkfile src="os_pickup_qssi.bp" dest="hardware/qcom-caf/sm8350/Android.bp" />
+    <linkfile src="os_pickup.mk" dest="hardware/qcom-caf/sm8350/Android.mk" />
+    <linkfile src="os_pickup_audio-ar.mk" dest="hardware/qcom-caf/sm8450/audio/Android.mk" />
+    <linkfile src="os_pickup_qssi.bp" dest="hardware/qcom-caf/sm8450/Android.bp" />
+    <linkfile src="os_pickup.mk" dest="hardware/qcom-caf/sm8450/Android.mk" />
+    <linkfile src="os_pickup_audio-ar.mk" dest="hardware/qcom-caf/sm8550/audio/Android.mk" />
+    <linkfile src="os_pickup_qssi.bp" dest="hardware/qcom-caf/sm8550/Android.bp" />
+    <linkfile src="os_pickup.mk" dest="hardware/qcom-caf/sm8550/Android.mk" />
+  </project>
+  <project path="hardware/xiaomi" name="linevall_hardware_xiaomi" remote="linevall" />
+
+  <!-- Packages -->
+  <project path="packages/apps/Launcher3" name="linevall_packages_apps_Launcher3" remote="linevall" />
+  <project path="packages/apps/Nfc" name="linevall_packages_apps_Nfc" remote="linevall" />
+  <project path="packages/apps/Settings" name="linevall_packages_apps_Settings" remote="linevall" />
+  <project path="packages/apps/LineVall" name="linevall_packages_apps_LineVall" remote="linevall" />
+  <project path="packages/apps/ParanoidSense" name="linevall_packages_apps_ParanoidSense" remote="linevall" />
+  <project path="packages/resources/ThemedIcons" name="linevall_packages_resources_ThemedIcons" remote="linevall">
+    <linkfile src="res" dest="packages/apps/Launcher3/res-icons" />
+  </project>
+  <project path="packages/apps/ThemePicker" name="linevall_packages_apps_ThemePicker" remote="linevall" />
+  <project path="packages/modules/adb" name="linevall_packages_modules_adb" remote="linevall" />
+  <project path="packages/modules/Bluetooth" name="linevall_packages_modules_Bluetooth" remote="linevall" />
+  <project path="packages/modules/common" name="linevall_packages_modules_common" remote="linevall" />
+  <project path="packages/modules/Connectivity" name="linevall_packages_modules_Connectivity" remote="linevall" />
+  <project path="packages/modules/Permission" name="linevall_packages_modules_Permission" remote="linevall" />
+  <project path="packages/modules/Wifi" name="linevall_packages_modules_Wifi" remote="linevall" />
+  <project path="packages/services/Telecomm" name="linevall_packages_services_Telecomm" remote="linevall"/>
+  <project path="packages/apps/WallpaperPicker2" name="linevall_packages_apps_WallpaperPicker2" remote="linevall" />
+  <project path="packages/services/Telephony" name="linevall_packages_services_Telephony" remote="linevall" />
+
+  <!-- System -->
+  <project path="system/bpf" name="linevall_system_bpf" remote="linevall" />
+  <project path="system/core" name="linevall_system_core" remote="linevall" />
+  <project path="system/libhidl" name="linevall_system_libhidl" remote="linevall" />
+  <project path="system/libhwbinder" name="linevall_system_libhwbinder" remote="linevall" />
+  <project path="system/media" name="linevall_system_media" remote="linevall" />
+  <project path="system/netd" name="linevall_system_netd" remote="linevall" />
+  <project path="system/security" name="linevall_system_security" remote="linevall" />
+  <project path="system/sepolicy" name="linevall_system_sepolicy" remote="linevall" />
+  <project path="system/update_engine" name="linevall_system_update_engine" remote="linevall" />
+   <project path="system/vold" name="linevall_system_vold" remote="linevall" />
+
+  <!-- Vendor -->
+  <project path="vendor/linevall" name="linevall_vendor_linevall" remote="linevall" />
+  <project path="vendor/prebuilts" name="linevall_vendor_prebuilts" remote="linevall" />
+  <project path="vendor/prebuilts-linevall" name="linevall_vendor_prebuilts" revision="lin" remote="linevall" />
+
+</manifest>

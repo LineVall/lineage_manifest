@@ -117,6 +117,7 @@
   <project path="packages/apps/Settings" name="packages_apps_Settings" groups="pdk-fs" remote="fortune" />
   <project path="packages/apps/SystemUIFlagFlipper" name="packages_apps_SystemUIFlagFlipper" remote="fortune" />
   <project path="packages/apps/TouchGestures" name="packages_apps_TouchGestures" remote="fortune" />
+  <project path="packages/apps/ParanoidSense" name="packages_apps_ParanoidSense" remote="fortune" />
   <project path="packages/modules/Bluetooth" name="packages_modules_Bluetooth" groups="pdk" remote="fortune" />
   <project path="packages/modules/Connectivity" name="packages_modules_Connectivity" groups="pdk-cw-fs,pdk-fs" remote="fortune" />
 
